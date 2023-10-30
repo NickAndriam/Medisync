@@ -13,6 +13,7 @@ import { BsHeartPulseFill } from "react-icons/bs";
 import { MdOutlineAir } from "react-icons/md";
 import { FaTemperatureEmpty } from "react-icons/fa6";
 import { Note } from "@/components/Reusables/Note";
+import { BigTextsWithInfo } from "@/components/Reusables/BigTextsWithInfo";
 
 export default function PatientId() {
   const { id } = useParams<{ id: string }>();
@@ -46,13 +47,18 @@ const PersonalInfo: React.FC<{ id: string }> = ({ id }) => {
           <TextInfo type="Last Name" text="Andriamaheriniaina Jedidia" />
         </div>
       </section>
-      {/* <div className="w-[60%] h-3 bg-transparent rounded-full shadow-lg mx-auto my-4" /> */}
-      <h2 className="my-4 bold text-blue-400 ml-4 font-bold">
+      <div className="w-[60%] border-b bg-transparent rounded-full shadow-lg mx-auto my-6" />
+      <section className="mb-8 flex items-center justify-around lg:px-14 px-0">
+        <BigTextsWithInfo text="M" label="Gender" />
+        <BigTextsWithInfo text="25" label="Age" />
+        <BigTextsWithInfo text="174" label="Height (cm)" />
+        <BigTextsWithInfo text="60" label="Weight (kg)" />
+      </section>
+      {/* <div className="w-[60%] border-b bg-transparent rounded-full shadow-lg mx-auto my-6" /> */}
+      {/* <h2 className="mb-4 bold text-blue-400 ml-4 font-bold text-left">
         Additional Info:
-      </h2>
-      <section className="flex flex-col gap-1 mt-2 lg:p-10 md:p-6 p-6 bg-gray-100 rounded-3xl">
-        <TextInfo type="Height" text="174 cm" />
-        <TextInfo type="Weight" text="60 Kg" />
+      </h2> */}
+      <section className="flex flex-col gap-1 mt-2 lg:p-6 md:p-6 p-6 bg-gray-100 rounded-3xl">
         <TextInfo type="Date of Birth" text="12 February 1997" />
         <TextInfo type="Phone Number" text="0321916397" />
         <TextInfo type="Emergency Number" text="0321916300" />

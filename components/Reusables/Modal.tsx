@@ -5,6 +5,7 @@ import cn from "classnames";
 interface ModalProps {
   button: React.ReactNode;
   children: React.ReactNode;
+  closeWrapper?: React.ReactNode;
 }
 
 export default function Modal(props: ModalProps) {
@@ -12,6 +13,11 @@ export default function Modal(props: ModalProps) {
   const modalClass = cn({
     "modal-open": open,
   });
+
+  // if (props.onClose) {
+  //   setOpen(false);
+  //   props.onClose();
+  // }
   return (
     <>
       <div onClick={() => setOpen(!open)} className="cursor-pointer">
@@ -29,6 +35,9 @@ export default function Modal(props: ModalProps) {
             </div>
           </form>
           {props.children}
+          <div onClick={() => setOpen(false)}>
+            {props.closeWrapper && props.closeWrapper}
+          </div>
         </div>
       </dialog>
     </>

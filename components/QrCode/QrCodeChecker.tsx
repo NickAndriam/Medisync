@@ -22,6 +22,13 @@ export default function QrCodeChecker() {
         button={
           <BsQrCode size={20} className="text-gray-600 hover:text-blue-400" />
         }
+        closeWrapper={
+          scanResult && (
+            <div className="bg-gray-200 p-4 grid place-items-center rounded-lg">
+              <IDResult id={scanResult} />
+            </div>
+          )
+        }
       >
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-xl font-bold">Scan Qr Code </h2>
@@ -40,18 +47,6 @@ export default function QrCodeChecker() {
             />
           )}
         </div>
-        {/* {scanResult !== "" && (
-          <CiUndo
-            size={30}
-            className="mx-auto mb-4 text-blue-400 hover:-rotate-180 transition-transform cursor-pointer"
-            onClick={() => setScanResult("")}
-          />
-        )} */}
-        {scanResult && (
-          <div className="bg-gray-200 p-4 grid place-items-center rounded-lg">
-            <IDResult id={scanResult} />
-          </div>
-        )}
       </Modal>
     </>
   );

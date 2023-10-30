@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <div
       className="absolute z-20 top-0 left-0 w-full h-20 bg-white  flex items-center justify-between p-2 lg:p-8 md:p-4 lg:pl-60 md:pl-4
-    rounded-b-2xl"
+    rounded-b-r-2xl shadow-sm"
     >
       <Link
         className="text-2xl font-bold uppercase text-blue-400 w-56 lg:flex hidden h-20 items-center justify-start pl-4

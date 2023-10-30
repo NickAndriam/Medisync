@@ -9,7 +9,7 @@ interface TextInfoProps {
 export default function TextInfo(props: TextInfoProps) {
   return (
     <p className="text-gray-600">
-      <b className="text-gray-700">{props.type}: </b>
+      <b className="text-gray-800">{props.type}: </b>
       {props.text}
     </p>
   );

@@ -18,9 +18,15 @@ export default function SideBar() {
         <div className="flex items-start justify-start flex-col gap-y-5 my-5">
           <SideBarItem title="Overview" Icon={TbLayoutDashboard} />
           <SideBarItem
-            title="Patient"
+            title="Patients"
             Icon={MdOutlinePersonalInjury}
             size={25}
+          />
+          <SideBarItem
+            title="Appointments"
+            Icon={MdOutlinePersonalInjury}
+            size={25}
+            to="/appointments"
           />
           <SideBarItem title="Schedule" Icon={AiOutlineSchedule} />
         </div>
@@ -33,11 +39,14 @@ const SideBarItem: React.FC<{
   title: string;
   Icon: IconType;
   size?: number;
-}> = ({ title, Icon, size = 22 }) => {
+  to?: string;
+}> = ({ title, Icon, size = 22, to }) => {
   return (
-    <div className="flex items-center justify-start gap-2 text-gray-600 hover:text-white hover:bg-blue-400 p-2 w-full rounded-lg hover:shadow-lg">
-      <Icon className="" size={size} />
-      <p className="font-normal">{title}</p>
-    </div>
+    <Link href={`${to}`}>
+      <div className="flex items-center justify-start gap-2 text-gray-600 hover:text-white hover:bg-blue-400 p-2 w-full rounded-lg hover:shadow-lg">
+        <Icon className="" size={size} />
+        <p className="font-normal">{title}</p>
+      </div>
+    </Link>
   );
 };
