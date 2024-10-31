@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1234",
+    "lastName": "Razafimanantsoa",
+    "firstName": "Andriamaheriniaina Jedidia",
+    "email": "razz@gmail.com",
+    "tel": "034 12 345 67",
+    "address": "Lot II J 12 Bis ",
+    "secondAddress": "Ambodivona",
+    "receipts": [
+      {
+        "id": "1",
+        "date": "Novembre 5th, 2023",
+        "total": "",
+        "items": [
+          {
+            "id": "1",
+            "name": "Ubuprofen Pro Max",
+            "quantity": "1",
+            "price": "5000"
+          },
+          {
+            "id": "2",
+            "name": "Paracetamol 1000mg",
+            "quantity": "2",
+            "price": "5000"
+          },
+          {
+            "id": "3",
+            "name": "Vitix 0.5",
+            "quantity": "1",
+            "price": "10000"
+          },
+          {
+            "id": "4",
+            "name": "Multifort Multi-Vitamine",
+            "quantity": "1",
+            "price": "13000"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -26,7 +26,7 @@ export default function QRCodeReader(props: QrCodeReaderProps) {
     <QrReader
       onResult={handleScan}
       containerStyle={{
-        background: "white",
+        background: "transparent",
         width: 250,
         height: 250,
         borderRadius: 10,

@@ -8,7 +8,7 @@ interface AccordionProps {
 export const Accordion = (props: AccordionProps) => {
   const [open, setOpen] = React.useState<boolean>(true);
   return (
-    <div className="collapse collapse-arrow bg-white rounded-[30px] shadow-md p-4">
+    <div className="collapse collapse-arrow bg-base-100 border border-neutral rounded-[30px] shadow-md p-4">
       <input
         type="radio"
         className="cursor-pointer"
@@ -16,11 +16,11 @@ export const Accordion = (props: AccordionProps) => {
         onChange={() => setOpen(!open)}
         onClick={() => setOpen(!open)}
       />
-      <div className="collapse-title text-xl font-bold cursor-pointer">
+      <div className="collapse-title text-xl font-bold cursor-pointer text-primary-content">
         {props.title}
       </div>
       <div className="collapse-content">
-        <div className="border mb-4" />
+        <div className="border mb-4 border-neutral" />
         {props.children}
       </div>
     </div>

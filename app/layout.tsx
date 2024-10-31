@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
 import { RecoilRoot } from "recoil";
 import RootComponents from "@/components/RootComponent";
 import Navbar from "@/components/Layout/Navbar";
 import SideBar from "@/components/Layout/SideBar";
+import SwitchTheme from "@/components/SwitchTheme";
 
 const inter = Inter({ subsets: ["latin"] });
+
+// write me function that will
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,12 +23,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-gray-200 text-black" data-theme="emerald">
+    <html lang="en" className="bg-base-200 emerald">
       <RootComponents>
         <body className={inter.className}>
           <Navbar />
           <SideBar />
           {children}
+          <div className="absolute top-4 right-4 z-10">
+            <SwitchTheme />
+          </div>
         </body>
       </RootComponents>
     </html>

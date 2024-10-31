@@ -14,13 +14,15 @@ export const Note = (props: NoteProps) => {
     <Modal
       button={
         // Click
-        <div className="flex items-start pb-4 my-4 border-b hover:opacity-50 cursor-pointer transition-opacity">
+        <div className="flex items-start pb-4 my-4 border-neutral hover:opacity-50 cursor-pointer transition-opacity">
           <div className="flex flex-col gap-3">
             <div>
-              <h3 className="font-medium">Right Ankle Check Up</h3>
+              <h3 className="font-medium text-primary-content">
+                Right Ankle Check Up
+              </h3>
               <p className="text-xs font-bold text-gray-500">Dr. John Wick</p>
             </div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-secondary-content">
               We will check up your ankle to make sure the ligaments are intact
               and in the right place! We will review your x-ray and MRI results.
             </p>
@@ -33,7 +35,7 @@ export const Note = (props: NoteProps) => {
             >
               11:00
             </p>
-            <p className="text-xs">29/10/2023</p>
+            <p className="text-xs text-secondary-content">29/10/2023</p>
           </div>
         </div>
       }
@@ -42,10 +44,12 @@ export const Note = (props: NoteProps) => {
       <div className="flex items-start pb-4 m-5 transition-opacity">
         <div className="flex flex-col gap-3">
           <div>
-            <h3 className="font-medium">Right Ankle Check Up</h3>
+            <h3 className="font-medium text-primary-content">
+              Right Ankle Check Up
+            </h3>
             <p className="text-xs font-bold text-gray-500">Dr. John Wick</p>
           </div>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-secondary-content">
             We will check up your ankle to make sure the ligaments are intact
             and in the right place! We will review your x-ray and MRI results.
           </p>
@@ -58,7 +62,7 @@ export const Note = (props: NoteProps) => {
           >
             11:00
           </p>
-          <p className="text-xs">29/10/2023</p>
+          <p className="text-xs text-secondary-content">29/10/2023</p>
         </div>
       </div>
     </Modal>

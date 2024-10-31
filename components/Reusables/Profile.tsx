@@ -1,10 +1,13 @@
 import React from "react";
+import Avatar from "./Avatar";
 
 export default function Profile() {
   return (
     <div className="flex items-center gap-x-2">
-      <div className="w-10 h-10 rounded-full bg-blue-400" />
-      <p className="lg:flex md:flex hidden text-sm">Dr. Nick Andriam </p>
+      <Avatar />
+      <p className="lg:flex md:flex hidden text-sm text-primary-content">
+        Dr. Nick Andriam{" "}
+      </p>
     </div>
   );
 }

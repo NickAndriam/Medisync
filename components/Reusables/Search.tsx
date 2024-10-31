@@ -8,7 +8,7 @@ export default function Search() {
       <input
         type="text"
         placeholder="Search "
-        className="input input-bordered lg:w-[400px] md:w-[400px] w-full h-11 rounded-full bg-gray-200"
+        className="input input-bordered lg:w-[400px] md:w-[400px] w-full h-11 rounded-full bg-base-content border-neutral text-primary-content"
       />
     </div>
   );

@@ -13,22 +13,20 @@ export default function Modal(props: ModalProps) {
   const modalClass = cn({
     "modal-open": open,
   });
-
-  // if (props.onClose) {
-  //   setOpen(false);
-  //   props.onClose();
-  // }
   return (
     <>
-      <div onClick={() => setOpen(!open)} className="cursor-pointer">
+      <div onClick={() => setOpen(!open)} className="relative cursor-pointer">
         {props.button}
       </div>
-      <dialog id="my_modal_3" className={`modal ${modalClass} bg-gray-300`}>
-        <div className="modal-box bg-white">
-          <form method="dialog" onChange={() => console.log("opened")}>
+      <dialog
+        id="my_modal_3"
+        className={`modal ${modalClass} bg-base-100 fixed z-50`}
+      >
+        <div className="modal-box bg-base-secondary">
+          <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <div
-              className="bg-white hover:bg-gray-100 rounded-full absolute right-2 top-2 text-red-500 w-8 h-8 grid place-items-center cursor-pointer"
+              className="bg-base-content hover:bg-gray-100 rounded-full absolute right-2 top-2 text-red-500 w-8 h-8 grid place-items-center cursor-pointer"
               onClick={() => setOpen(false)}
             >
               ✕

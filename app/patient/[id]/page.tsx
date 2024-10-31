@@ -9,11 +9,14 @@ import { Accordion } from "@/components/Reusables/Accordion";
 import { MyIcon } from "@/components/Reusables/MyIcon";
 
 import { TbHeartRateMonitor } from "react-icons/tb";
-import { BsHeartPulseFill } from "react-icons/bs";
+import { BsFileEarmarkText, BsHeartPulseFill } from "react-icons/bs";
 import { MdOutlineAir } from "react-icons/md";
 import { FaTemperatureEmpty } from "react-icons/fa6";
 import { Note } from "@/components/Reusables/Note";
 import { BigTextsWithInfo } from "@/components/Reusables/BigTextsWithInfo";
+import QrCodeGenerator from "@/components/QrCode/QrCodeGenerator";
+import Avatar from "@/components/Reusables/Avatar";
+import Link from "next/link";
 
 export default function PatientId() {
   const { id } = useParams<{ id: string }>();
@@ -27,6 +30,7 @@ export default function PatientId() {
         </section>
         <section className="w-full md:w-2/5 lg:min-w-[200px] lg:w-1/3 flex flex-col gap-5">
           <Appointments />
+          <Invoices />
         </section>
       </div>
     </SafeView>
@@ -37,17 +41,17 @@ const PersonalInfo: React.FC<{ id: string }> = ({ id }) => {
   return (
     <Box>
       <div className="absolute right-8 top-6 lg:block md:hidden hidden">
-        <QRCode value={id} size={80} qrStyle="dots" />
+        <QrCodeGenerator size={80} value={id} />
       </div>
       <section className="flex items-center gap-4 rounded-2xl">
-        <div className="w-[90px] h-[90px] bg-blue-400 rounded-full" />
+        <Avatar size={90} />
         <div className="flex flex-col gap-2">
           <TextInfo type="ID" text={id} />
-          <TextInfo type="First Name" text="RAZAFIMANANTSOA" />
-          <TextInfo type="Last Name" text="Andriamaheriniaina Jedidia" />
+          <TextInfo type="First Name" text="Andriamaheriniaina Jedidia" />
+          <TextInfo type="Last Name" text="RAZAFIMANANTSOA" />
         </div>
       </section>
-      <div className="w-[60%] border-b bg-transparent rounded-full shadow-lg mx-auto my-6" />
+      <div className="w-[60%] border-b border-neutral bg-transparent rounded-full shadow-lg mx-auto my-6" />
       <section className="mb-8 flex items-center justify-around lg:px-14 px-0">
         <BigTextsWithInfo text="M" label="Gender" />
         <BigTextsWithInfo text="25" label="Age" />
@@ -58,7 +62,7 @@ const PersonalInfo: React.FC<{ id: string }> = ({ id }) => {
       {/* <h2 className="mb-4 bold text-blue-400 ml-4 font-bold text-left">
         Additional Info:
       </h2> */}
-      <section className="flex flex-col gap-1 mt-2 lg:p-6 md:p-6 p-6 bg-gray-100 rounded-3xl">
+      <section className="flex flex-col gap-1 mt-2 lg:p-6 md:p-6 p-6 bg-base-content rounded-3xl border border-neutral">
         <TextInfo type="Date of Birth" text="12 February 1997" />
         <TextInfo type="Phone Number" text="0321916397" />
         <TextInfo type="Emergency Number" text="0321916300" />
@@ -123,10 +127,30 @@ const VitalSigns: React.FC = () => {
 
 const Appointments: React.FC = () => {
   return (
-    <Accordion title="Appointments">
+    <Accordion title="Appointment">
       <Note />
-      <Note color="bg-yellow-400" />
-      <Note color="bg-gray-400" />
+      {/* <Note color="bg-gray-400" /> */}
+    </Accordion>
+  );
+};
+const Invoices: React.FC = () => {
+  return (
+    <Accordion title="Invoices">
+      <Link
+        href="/invoice/preview/1234567890"
+        className="flex items-center justify-between"
+      >
+        <div className="flex items-center justify-center gap-2">
+          <BsFileEarmarkText className="text-secondary-content" />
+          <p className="text-primary-content hover:text-gray-500 hover:underline cursor-pointer">
+            Receipt.pdf
+          </p>
+        </div>
+        <div className="text-gray-500 text-sm">04/11/23</div>
+      </Link>
+
+      {/* <Note color="bg-yellow-400" /> */}
+      {/* <Note color="bg-gray-400" /> */}
     </Accordion>
   );
 };

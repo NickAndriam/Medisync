@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
+:root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +24,69 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* :root,
+[data-theme] {
+  background-color: hsl(var(--b1) / var(--tw-bg-opacity, 1));
+  color: hsl(var(--bc) / var(--tw-text-opacity, 1));
 } */
+
+/* -----------------------------
+      Fc Calendar
+-------------------------------- */
+
+.fc .fc-button-primary {
+  color: white !important;
+  background-color: #61a5fa !important;
+  border-radius: 100px !important;
+  border-color: transparent !important;
+}
+.fc .fc-button-primary:hover {
+  color: white !important;
+  background-color: #66cc8a !important;
+}
+.fc-event {
+  border: none;
+  background-color: transparent;
+}
+
+.fc td,
+.fc th {
+  @apply border-neutral text-primary-content;
+}
+
+.fc-scrollgrid {
+  @apply !border-neutral;
+}
+
+[data-theme="dark"] .fc-toolbar-title {
+  color: white !important;
+}
+[data-theme="light"] .fc-toolbar-title {
+  color: black !important;
+}
+
+/* -----------------------------
+      Qr Code Style
+-------------------------------- */
+
+#react-qrcode-logo {
+  border-radius: 5px !important;
+  background-color: white;
+}
+
+/* -----------------------------
+        Tables
+--------------------------------*/
+
+.coolEdge {
+  border-radius: 10px;
+  border-spacing: 0;
+  border-collapse: separate !important;
+}
+
+.stickyRow {
+  position: sticky;
+  top: 0px;
+}
